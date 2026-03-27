@@ -1,12 +1,15 @@
 # ShopZone - E-Commerce Web Application
 
+**GitHub Repository:** [anillkumarsharma/E-Commerce-Portal](https://github.com/anillkumarsharma/E-Commerce-Portal)
+
 A React-based e-commerce app built for the Sembark Tech frontend assignment.
 
 ## Tech Stack
 
 - **React 19** with TypeScript (Vite)
-- **React Router v6** - navigation & URL-based filter persistence
-- **MobX + React Context API** - cart state management
+- **React Router v7** - navigation & URL-based filter persistence
+- **React Context API + useState** - cart state management (with localStorage persistence)
+- **CSS Modules** - component-scoped styling
 - **Axios** - API calls to [fakestoreapi.com](https://fakestoreapi.com)
 - **Cypress** - E2E testing
 
@@ -64,29 +67,42 @@ src/
   pages/
     HomePage/       - Product listing with URL-persisted filters
     ProductDetailPage/ - Product detail with Add to Cart
-    CartPage/       - Cart items with remove functionality
+    CartPage/       - Cart items with quantity controls & remove
   context/
-    CartContext.tsx - React Context wrapping MobX store
-  store/
-    cartStore.ts    - MobX observable cart store
+    CartContext.tsx - React Context + useState cart management
   api/
     productApi.ts   - All fakestoreapi.com API calls
   hooks/
     useWindowSize.ts - Responsive inline styles helper
+  styles/
+    *.module.css    - CSS Modules for each component/page
   types/
-    index.ts        - TypeScript interfaces
+    index.ts        - TypeScript interfaces (Product, CartItem, SortOrder)
 ```
 
 ## Features
 
-- Product listing grid (responsive, inline styles)
+- Product listing grid (responsive, CSS Modules)
 - Multi-category filter + price sort — **URL-persisted** (survives page refresh & back button)
 - Product detail page at `/product/:id/details`
 - Add to Cart with animation
-- Remove from Cart
-- Cart total and item count in footer (always visible)
-- localStorage cart persistence (bonus)
+- Increase / decrease quantity and remove from Cart
+- Cart total and item count visible in header & footer
+- **localStorage cart persistence** — cart survives page reload
 - Page entry animations
+
+## Cart Functionality
+
+Cart is managed via React Context API with `useState`:
+
+- `addItem` — adds product or increments quantity if already present
+- `removeItem` — removes product entirely
+- `increaseQuantity` / `decreaseQuantity` — quantity controls (auto-removes at 0)
+- `clearCart` — empties the cart
+- `isInCart` — checks if a product is already in cart
+- `totalItems` / `totalPrice` — derived values available globally
+
+All cart changes are synced to `localStorage` automatically.
 
 ## Known Limitations & Assumptions
 

@@ -1,4 +1,4 @@
-// ─── Product Types ───────────────────────────────────────────────────────────
+
 
 export interface Rating {
   rate: number
@@ -15,13 +15,10 @@ export interface Product {
   rating: Rating
 }
 
-// ─── Cart Types ───────────────────────────────────────────────────────────────
 
 export interface CartItem extends Product {
-  // LOGIC: quantity tracks how many of the same product are in cart
   quantity: number
 }
 
-// ─── Filter Types ─────────────────────────────────────────────────────────────
 
 export type SortOrder = 'asc' | 'desc' | ''
