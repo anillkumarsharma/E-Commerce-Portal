@@ -1,0 +1,146 @@
+.header {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  width: 100%;
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.logoLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.brandName {
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navLink {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  background-color: transparent;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.navLink:hover {
+  background-color: #f1f5f9;
+  color: #4f46e5;
+}
+
+.navLinkActive {
+  font-weight: 600;
+  color: #4f46e5;
+  background-color: #eef2ff;
+}
+
+.cartLink {
+  text-decoration: none;
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.cartLink:hover {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.cartLinkActive {
+  font-weight: 600;
+  color: #4f46e5;
+  background-color: #eef2ff;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ef4444;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 2px white;
+  line-height: 1;
+}
+
+@media (max-width: 639px) {
+  .container {
+    padding: 12px 16px;
+    height: auto;
+  }
+
+  .brandName {
+    font-size: 18px;
+  }
+
+  .navLink {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .cartLink {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .nav {
+    gap: 2px;
+  }
+}
