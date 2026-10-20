@@ -8,7 +8,7 @@ const useWindowSize = (): WindowSize => {
   const [size, setSize] = useState<WindowSize>({
     width: window.innerWidth,
     height: window.innerHeight,
-  })
+  })  
 
   useEffect(() => {
     const handleResize = () => {
